@@ -10,9 +10,11 @@ export default function App() {
 
     <SafeAreaView style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
-      <Image source={require("./assets/logo-no-background.png")}/>
+      <Image source={require("./assets/logo-no-background.png")}
+      style={{width: "100%", height:160}} 
+      />
       <StatusBar style="auto" />
-      <Navigator />
+      <Navigator style={navigator}/>
       <Text>Open up App.js to start working on your app!</Text>
     </SafeAreaView>
     </NavigationContainer>
@@ -29,6 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   navigator: {
-    width: '100%'
+    width: '100%',
+    height: 200,
+    backgroundColor:"blue"
   }
 });

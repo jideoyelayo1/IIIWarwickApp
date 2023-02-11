@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, Button,SafeAreaView } from 'react-native';
+import { globalStyles } from '../styles/global';
+
 
 export default function Home({ navigation }) {
 
@@ -10,8 +12,8 @@ export default function Home({ navigation }) {
   const toContacts = () => {    navigation.push('Contacts');  }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text >Home Screen</Text>
+    <SafeAreaView style={globalStyles.container} >
+      <Text style={globalStyles.titleText}>Home Screen</Text>
       <Button title='About' onPress={toAbout} />
       <Button title='Review' onPress={toReviewDetails} />
       <Button title='Calculator' onPress={toCalc} />
@@ -21,13 +23,13 @@ export default function Home({ navigation }) {
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
     container: {
-        padding: 20,
-        alignSelf: 'stretch',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+      flex: 1,
+      padding:20,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
-});
-  
+  });
