@@ -19,7 +19,7 @@ export default function Home({ navigation }) {
       <Button title='Calculator' onPress={toCalc} />
       <Button title='Product List' onPress={toProductList} />
       <Button title='Contacts' onPress={toContacts} />
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text> app!</Text>
     </SafeAreaView>
   );
 }

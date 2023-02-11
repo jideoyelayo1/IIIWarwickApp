@@ -14,4 +14,8 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  Calc_buttons: { 
+    height: 40, 
+    borderColor: 'blue', 
+    borderWidth: 1 }
 });
