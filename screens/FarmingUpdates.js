@@ -26,7 +26,7 @@ export default function FarmingUpdates({ navigation }) {
   return (
     <View style={globalStyles.container}>
       <Text>Farming Updates </Text>
-      <Text>{weather.main && weather.main.temp}</Text>
+      <Text>The temperature is {weather.main && weather.main.temp}</Text>
       <Button title='back to home screen' onPress={pressHandler} />
     </View>
   );

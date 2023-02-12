@@ -29,10 +29,13 @@ export default function LoginPage({ navigation }) {
 
       <Text>LoginPage Screen</Text>
       <Text>Username</Text><TextInput style={globalStyles.Calc_buttons}
+      autoComplete="username"
         onChangeText={(value) => setUser(value)}
         value={user}
       />
       <Text>Password</Text><TextInput style={globalStyles.Calc_buttons}
+      secureTextEntry={true}
+      placeholder="Enter password"
         onChangeText={(value) => setPwd(value)}
         value={pwd}
       />
