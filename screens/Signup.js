@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
-import { globalStyles } from '../../styles/global';
+import { globalStyles } from '../styles/global';
 
-export default function LoginIn({ navigation }) {
+export default function SignUp({ navigation }) {
 
   const pressHandler = () => {
     navigation.goBack();
@@ -10,8 +10,9 @@ export default function LoginIn({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      <Text>ReviewDetails Screen</Text>
-      <Button title='back to home screen' onPress={pressHandler} />
+      <Text>SignUp Screen</Text>
+      <Button title='Submit'/>
+      <Button title='back' onPress={pressHandler} />
     </View>
   );
 }

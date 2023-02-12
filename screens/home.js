@@ -7,6 +7,7 @@ import { globalStyles } from '../styles/global';
 export default function Home({ navigation }) {
 
   const toReviewDetails = () => {    navigation.push('ReviewDetails');  }
+  const toFarmingUpdates = () => {    navigation.push('FarmingUpdates');  }
   const toLoginPage = () => {    navigation.push('LoginPage');  }
   const toAbout = () => {    navigation.push('About');  }
   const toCalc = () => {    navigation.push('Calculator');  }
@@ -22,11 +23,11 @@ export default function Home({ navigation }) {
       
       <Button title='About' onPress={toAbout} />
       <Button title='Login' onPress={toLoginPage} />
-      <Button title='Review' onPress={toReviewDetails} />
+      <Button title='Farming Updates' onPress={toFarmingUpdates} />
       <Button title='Calculator' onPress={toCalc} />
       <Button title='Product List' onPress={toProductList} />
       <Button title='Contacts' onPress={toContacts} />
-      <Text> Still Under development</Text>
+      <Text> *Still Under development*</Text>
     </SafeAreaView>
   );
 }
