@@ -20,6 +20,8 @@ import P_vals from '../screens/Graphs/P_vals';
 import K_vals from '../screens/Graphs/K_vals';
 import Temperature from '../screens/Graphs/temp';
 import Humidity from '../screens/Graphs/humd';
+import TermsOfService from '../screens/TermsOfService';
+
 
 const screens = {
   Home: {
@@ -76,6 +78,9 @@ const screens = {
   },
   Humidity: {
     screen: Humidity,
+  },
+  TermsOfService: {
+    screen: TermsOfService,
   },
 
 };

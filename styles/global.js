@@ -53,4 +53,16 @@ subsubheader: {
   textDecorationLine: 'underline',
   fontSize:14,
 },
+checkbox: {
+  borderWidth: 1,
+  borderColor: 'grey',
+  padding: 10,
+  borderRadius: 5,
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor:'black',
+},
+text: {
+  marginLeft: 10,
+},
 });
