@@ -75,7 +75,7 @@ export default function Calculator({ navigation }) {
 
   return (
     <KeyboardAvoidingView  style={globalStyles.container}>
-      <Text>Calculator Screen</Text>
+      <Text style={globalStyles.titleText}>Tillage Tool Calculator</Text>
       <Text>N:</Text><TextInput style={globalStyles.Calc_buttons}
         onChangeText={(value) => setN_val(value)}
         value={N_val}

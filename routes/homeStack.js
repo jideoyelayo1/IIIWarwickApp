@@ -6,10 +6,15 @@ import About from '../screens/about';
 import Calculator from '../screens/calculator';
 import Product_List from '../screens/productlist';
 import Contacts from '../screens/contact';
+import LoginPage from '../screens/loginpage';
+import Graph from '../screens/graphs';
 
 const screens = {
   Home: {
     screen: Home,
+  },
+  LoginPage: {
+    screen: LoginPage,
   },
   ReviewDetails: {
     screen: ReviewDetails,
@@ -25,6 +30,10 @@ const screens = {
   },
   Contacts: {
     screen: Contacts,
+  }
+  ,
+  Graphs: {
+    screen: Graph,
   }
 };
 

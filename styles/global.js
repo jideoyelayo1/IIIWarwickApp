@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
   titleText: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
   },
@@ -11,11 +11,46 @@ export const globalStyles = StyleSheet.create({
     lineHeight: 20,
   },
   container: {
-    flex: 1,
+    flex: 200,
     padding: 20,
+    width:"100%"
   },
   Calc_buttons: { 
     height: 40, 
     borderColor: 'blue', 
-    borderWidth: 1 }
+    borderWidth: 1, 
+  },
+Product_titles: {
+   fontSize: 24, 
+   fontWeight: 'bold',
+},
+Product_cost: {
+  fontSize: 11, 
+  fontWeight: 'bold',
+},
+Product_info: {
+  fontSize: 11, 
+},
+links: {
+  color: 'blue',
+  textDecorationLine: 'underline',
+},
+header: {
+  color: 'Green',
+  textDecorationLine: 'underline',
+  fontSize:24,
+},
+subheader: {
+  color: 'black',
+  textDecorationLine: 'underline',
+  fontSize:18,
+},
+bullet: {
+  color: 'black',
+},
+subsubheader: {
+  color: 'black',
+  textDecorationLine: 'underline',
+  fontSize:14,
+},
 });
