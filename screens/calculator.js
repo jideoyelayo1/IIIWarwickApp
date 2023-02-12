@@ -1,5 +1,5 @@
 import Reac, { useState } from 'react';
-import { StyleSheet, View, Text, Button,TextInput } from 'react-native';
+import { StyleSheet, View, Text, Button,TextInput,Keyboard,KeyboardAvoidingView  } from 'react-native';
 import { globalStyles } from '../styles/global';
 import {generateFertiliserAdvice} from './AI_fert'
 
@@ -8,27 +8,74 @@ export default function Calculator({ navigation }) {
 
   const pressHandler = () => { navigation.goBack(); }
 
-  //NPK
-  const [N_val, setN_val] = useState('');
-  const [P_val, setP_val] = useState('');
-  const [K_val, setK_val] = useState('');
-  const [Temperature, setTemperature] = useState('');
-  const [Humidity, setHumidity] = useState('');
-let fertiliseText;
-  const Fertiliser = () => {
-    const [fertiliseText, setFertiliseText] = useState('');
-  
-    useEffect(() => {
-      setFertiliseText(generateFertiliserAdvice(nitrogen, phosphorus, potassium));
-    }, []);
+
+    const [N_val, setN_val] = useState(0.0);
+    const [P_val, setP_val] = useState(0.0);
+    const [K_val, setK_val] = useState(0.0);
+    const [sum, setSum] = useState(0.0);
+    const [fertMsg, SetfertMsg] = useState("");
+    
+
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //console.log(setN_val+setP_val+setK_val);
+    //alert(N_val+P_val+K_val);
+    setSum(N_val + P_val + K_val);
+
+    let fertilise = 'Add fertiliser';
+    let addN_val = (17 - N_val) * 700000 / 100000;
+    let addP_val = (6 - P_val) * 700000 / 100000;
+    let addK_val = (6 - K_val) * 700000 / 100000;
+
+    if (fertilise === 'Add fertiliser') {
+        let fertiliseMessage = '';
+
+        if (N_val < 17 && P_val < 5.5 && K_val < 5.5) {
+            addN_val = addN_val / 4;
+            addP_val = addP_val / 4;
+            fertiliseMessage = `Apply ${addN_val.toFixed(1)} kg/ha of N_val fertiliser and apply ${addP_val.toFixed(1)} kg/ha of P_val fertiliser in four equal splits at basal, tillering, panicle initiation and heading stages. Apply ${addK_val.toFixed(1)} kg/ha of K_val fertiliser at basal stage.`;
+
+        } else if (N_val < 17 && P_val < 5.5 && K_val > 5.5) {
+            addN_val = addN_val / 4;
+            addP_val = addP_val / 4;
+            fertiliseMessage = `Apply ${addN_val.toFixed(1)} kg/ha of N_val fertiliser and apply ${addP_val.toFixed(1)} kg/ha of P_val fertiliser in four equal splits at basal, tillering, panicle initiation and heading stages. Enough K_val in the soil.`;
+
+        } else if (N_val < 17 && P_val > 5.5 && K_val < 5.5) {
+            addN_val = addN_val / 4;
+            fertiliseMessage = `Apply ${addN_val.toFixed(1)} kg/ha of N_val fertiliser in four equal splits at basal, tillering, panicle initiation and heading stages and apply ${addK_val.toFixed(1)} kg/ha of K_val fertiliser at basal stage. Enough P_val in the soil.`;
+
+        } else if (N_val < 17 && P_val > 5.5 && K_val > 5.5) {
+            addN_val = addN_val / 4;
+            fertiliseMessage = `Apply ${addN_val.toFixed(1)} kg/ha of N_val fertiliser in four equal splits at basal, tillering, panicle initiation and heading stages. Enough P_val and K_val in the soil.`;
+
+        } else if (N_val > 17 && P_val < 5.5 && K_val < 5.5) {
+            addP_val = addP_val / 4;
+            fertiliseMessage = `Apply ${addP_val.toFixed(1)} kg/ha of P_val fertiliser in four equal splits at basal, tillering, panicle initiation and heading stages and apply ${addK_val.toFixed(1)} kg/ha of K_val fertiliser at basal stage. Enough N_val in the soil.`;
+
+        } else if (N_val > 17 && P_val < 5.5 && K_val > 5.5) {
+            addP_val = addP_val / 4;
+            fertiliseMessage = `Apply ${addP_val.toFixed(1)} kg/ha of P_val fertiliser in four equal splits at basal, tillering, panicle initiation and heading stages. Enough N_val and K_val in the soil.`;
+        } else if (N_val > 17 && P_val > 5.5 && K_val < 5.5) {
+            addP_val = addP_val / 4;
+            fertiliseMessage = `Apply ${addK_val.toFixed(1)} kg/ha of K_val fertiliser at basal stage. Enough N_val and P_val in the soil.`;
+        }else{
+          fertiliseMessage = `Invalid Results`;
+        }
+
+        SetfertMsg(fertiliseMessage);
+        //alert(fertMsg)
+        Keyboard.dismiss();
+
+
+
+    }
 }
 
 
-
   return (
-    <View style={globalStyles.container}>
+    <KeyboardAvoidingView  style={globalStyles.container}>
       <Text>Calculator Screen</Text>
-      <Button title='Run' onPress={Fertiliser} />
       <Text>N:</Text><TextInput style={globalStyles.Calc_buttons}
         onChangeText={(value) => setN_val(value)}
         value={N_val}
@@ -44,19 +91,9 @@ let fertiliseText;
         value={K_val}
         keyboardType='numeric'
       />
-      <Text>Temperature:</Text><TextInput style={globalStyles.Calc_buttons}
-        onChangeText={(value) => setTemperature(value)}
-        value={Temperature}
-        keyboardType='numeric'
-      />
-      <Text>Humidity:</Text><TextInput style={globalStyles.Calc_buttons}
-        onChangeText={(value) => setHumidity(value)}
-        value={Humidity}
-        keyboardType='numeric'
-      />
-      <Button title='Run' onPress={Fertiliser} />
-      <Text>{fertiliseText}</Text>
+      <Button title='Run' onPress={handleSubmit} />
+      <Text>{fertMsg}</Text>
       <Button title='back to home screen' onPress={pressHandler} />
-    </View>
+    </KeyboardAvoidingView >
   );
 }
