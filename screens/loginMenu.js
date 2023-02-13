@@ -15,13 +15,13 @@ export default function LoginMenu({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      <Text>Login Menu</Text>
-      <Button title='My Account' onPress={toMyAccount} />
-      <Button title='My orders' onPress={toMyOrders} />
-      <Button title='Graphs' onPress={toGraphs} />
-      <Button title='Customer Service' onPress={toCustomerService} />
+      <Text style={globalStyles.titleText}>Login Menu</Text>
+      <Button title='My Account' color='#c9efc7' onPress={toMyAccount} />
+      <Button title='My orders' color='#c9efc7' onPress={toMyOrders} />
+      <Button title='Graphs' color='#c9efc7' onPress={toGraphs} />
+      <Button title='Customer Service' color='#c9efc7' onPress={toCustomerService} />
       
-      <Button title='log out' onPress={pressHandler} />
+      <Button title='log out' color='#c9efc7' onPress={pressHandler} />
     </View>
   );
 }

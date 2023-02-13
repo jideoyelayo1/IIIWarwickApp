@@ -86,7 +86,7 @@ export default function SignUp({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      <Text>Signing Up Form</Text>
+      <Text style={globalStyles.titleText}>Create an Account</Text>
       <Text>Username:</Text><TextInput style={globalStyles.Calc_buttons}
       placeholder="Username"
       autoComplete="username"
@@ -111,7 +111,7 @@ export default function SignUp({ navigation }) {
         onChangeText={(value) => setCnfPwd(value)}
         value={Cnfpwd}
       />
-      <Button title='Agree to Terms and Conditions:' onPress={toTermsOfService}/>
+      <Button title='Agree to Terms and Conditions:' color='#c9efc7' onPress={toTermsOfService}/>
       <Checkbox style={globalStyles.checkbox}
         status={checked ? 'checked' : 'unchecked'}
         onPress={() => {
@@ -119,8 +119,8 @@ export default function SignUp({ navigation }) {
         }}
       />
 
-      <Button title='Submit' onPress={SigningUp}/>
-      <Button title='back' onPress={pressHandler} />
+      <Button title='Submit' color='#c9efc7' onPress={SigningUp}/>
+      <Button title='back' color='#c9efc7' onPress={pressHandler} />
     </View>
   );
 }

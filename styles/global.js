@@ -5,6 +5,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
+    textAlign: 'center',
   },
   paragraph: {
     marginVertical: 8,
@@ -13,12 +14,14 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 200,
     padding: 20,
-    width:"100%"
+    width:"100%",
+    backgroundColor: '#31c48d',
   },
   Calc_buttons: { 
     height: 40, 
-    borderColor: 'blue', 
+    borderColor: '#31c48d', 
     borderWidth: 1, 
+    backgroundColor: 'white',
   },
 Product_titles: {
    fontSize: 24, 
@@ -32,7 +35,7 @@ Product_info: {
   fontSize: 11, 
 },
 links: {
-  color: 'blue',
+  color: '#c9efc7',
   textDecorationLine: 'underline',
 },
 header: {
@@ -66,8 +69,60 @@ text: {
   marginLeft: 10,
 },
 Forum_text: { 
-  height: 120, 
-  borderColor: 'blue', 
-  borderWidth: 1, 
+  height: 120,  
+  borderWidth: 3, 
+  borderColor: '#c9efc7',
+  backgroundColor: 'white',
 },
+HomePage_buttons: {
+  flex: 1,
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width:"100%",
+  fontSize: 24,
+  borderWidth: 1,
+  backgroundColor: '#528265',
+  fontWeight: 'bold',
+  color: '#c9efc7',
+},
+HomePage: {
+  flex: 200,
+  padding: 20,
+  width:"100%",
+  backgroundColor: '#528265',
+  color:'#c9efc7',
+},
+HomePage_buttons_wrap:{
+  flex: 1,
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width:"100%",
+  fontSize: 24,
+  borderWidth: 10,
+  borderColor: '#31c48d',
+  backgroundColor: '#528265',
+  fontWeight: 'bold',
+},
+StatusBar: {
+  backgroundColor: '#31c48d',
+  color: '#31c48d',
+},
+Graph_settings:{
+  backgroundColor: 'white',
+},
+Farming_Alerts_box: {
+  flex: 1,
+  flexDirection: 'column',
+
+  alignItems: 'center',
+  width:"100%",
+  fontSize: 24,
+  borderWidth: 10,
+  borderColor: '#31c48d',
+  backgroundColor: '#528265',
+  fontWeight: 'bold',
+  color: '#c9efc7',
+},
+
 });

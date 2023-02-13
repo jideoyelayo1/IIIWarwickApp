@@ -76,24 +76,27 @@ export default function Calculator({ navigation }) {
   return (
     <KeyboardAvoidingView  style={globalStyles.container}>
       <Text style={globalStyles.titleText}>Tillage Tool Calculator</Text>
-      <Text>N:</Text><TextInput style={globalStyles.Calc_buttons}
+      <Text>Nitrogen levels (mg/kg):</Text><TextInput style={globalStyles.Calc_buttons}
         onChangeText={(value) => setN_val(value)}
         value={N_val}
+        placeholder='0.0'
         keyboardType='numeric'
       />
-      <Text>P:</Text><TextInput style={globalStyles.Calc_buttons}
+      <Text>Phorphous levels (mg/kg):</Text><TextInput style={globalStyles.Calc_buttons}
         onChangeText={(value) => setP_val(value)}
         value={P_val}
+        placeholder='0.0'
         keyboardType='numeric'
       />
-      <Text>K:</Text><TextInput style={globalStyles.Calc_buttons}
+      <Text>Potassium levels (mg/kg):</Text><TextInput style={globalStyles.Calc_buttons}
         onChangeText={(value) => setK_val(value)}
         value={K_val}
+        placeholder='0.0'
         keyboardType='numeric'
       />
-      <Button title='Run' onPress={handleSubmit} />
+      <Button title='Run' color='#c9efc7' onPress={handleSubmit} />
       <Text>{fertMsg}</Text>
-      <Button title='back to home screen' onPress={pressHandler} />
+      <Button title='back to home screen' color='#c9efc7' onPress={pressHandler} />
     </KeyboardAvoidingView >
   );
 }

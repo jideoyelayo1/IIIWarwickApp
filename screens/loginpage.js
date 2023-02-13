@@ -17,7 +17,7 @@ export default function LoginPage({ navigation }) {
 
 
   const toLoginMenu = () => {
-    retrieveData();
+    //retrieveData();
     
     if(user !== "Jim" && pwd !== "Pass"){
       alert("Invalid Username or Password");
@@ -55,23 +55,28 @@ export default function LoginPage({ navigation }) {
   return (
     <ScrollView style={globalStyles.container}>
 
-      <Text>LoginPage Screen</Text>
+      <Text style={globalStyles.titleText}>Login Page</Text>
       <Text>Username</Text><TextInput style={globalStyles.Calc_buttons}
       autoComplete="username"
+      placeholder="Enter username"
+      autoCompleteType="username"
         onChangeText={(value) => setUser(value)}
         value={user}
       />
       <Text>Password</Text><TextInput style={globalStyles.Calc_buttons}
       secureTextEntry={true}
       placeholder="Enter password"
+      autoCompleteType="password"
         onChangeText={(value) => setPwd(value)}
         value={pwd}
       />
 
-      <Button title='Log In' onPress={toLoginMenu} />
-      <Button title='Sign Up' onPress={toSignUp} />
+      <Button title='Log In' color='#c9efc7' onPress={toLoginMenu} />
+      <Button title='Sign Up' color='#c9efc7' onPress={toSignUp} />
 
-      <Button title='back to home screen' onPress={pressHandler} />
+    <Text> Login Example: {"\n"}Username:"Jim" Password:"Pass"</Text>
+
+      <Button title='back to home screen' color='#c9efc7' onPress={pressHandler} />
     </ScrollView>
   );
 }

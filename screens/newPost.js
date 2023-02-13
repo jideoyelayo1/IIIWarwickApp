@@ -84,8 +84,8 @@ export default function newPost({ navigation }) {
         value={user}
       />
 
-      <Button title='Post' onPress={Post}/>
-      <Button title='back' onPress={pressHandler} />
+      <Button title='Post' onPress={Post} color='#c9efc7'/>
+      <Button title='back' onPress={pressHandler} color='#c9efc7' />
     </View>
   );
 }

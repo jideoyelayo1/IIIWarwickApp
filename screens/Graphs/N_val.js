@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button,SafeAreaView } from 'react-native';
 import { LineChart, Grid } from 'react-native-chart-kit';
 import { globalStyles } from '../../styles/global';
 
@@ -9,17 +9,17 @@ export default function N_vals({ navigation }) {
     navigation.goBack();
   }
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    labels:  ['Feb-09', 'Feb-10', 'Feb-11', 'Feb-12', 'Feb-13', 'Feb-14'],
     datasets: [
       {
-        data: [20, 45, 28, 80, 99, 43],
+        data: [1.9, 2.0, 2.15, 2.1, 2.4, 2.3],
       },
     ],
   };
 
   return (
-    <View style={globalStyles.container}>
-      <Text>Nitrogen Values</Text>
+    <SafeAreaView style={globalStyles.Graph_settings}>
+      <Text style={globalStyles.titleText}>Nitrogen Values</Text>
       <LineChart
       data={data}
       width={375}
@@ -37,6 +37,6 @@ export default function N_vals({ navigation }) {
         borderRadius: 16,
       }}
     />
-    </View>
+    </SafeAreaView>
   );
 }

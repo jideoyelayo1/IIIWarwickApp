@@ -13,18 +13,9 @@ export default function Graph({ navigation }) {
     navigation.goBack();
   }
 
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-    datasets: [
-      {
-        data: [20, 45, 28, 80, 99, 43],
-      },
-    ],
-  };
-
   return (
-    <ScrollView>
-      <SafeAreaView>
+    <ScrollView style={globalStyles.Graph_settings}>
+      <SafeAreaView >
         
       <N_vals/>      
       <P_vals/>

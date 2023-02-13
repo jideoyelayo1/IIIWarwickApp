@@ -12,17 +12,12 @@ export default function About({ navigation }) {
       
   return (
     <ScrollView style={globalStyles.container} >
-      <SafeAreaView>
-      <Text >About Screen</Text>
-      <Text style={globalStyles.links} onPress={gotoGithub}>
-      Visit Our GitHub Repo
-      </Text>
+      <SafeAreaView style={globalStyles.HomePage}>
+      <Text style={globalStyles.titleText} >About Us</Text>
+      
 
-      <Image
-        source={{
-          uri:
-            'https://user-images.githubusercontent.com/41443216/207383351-564382f6-e482-47be-8a85-25595eddfa14.png',
-        }}
+      <Image source={require("../assets/logo-no-background.png")}
+      style={{width: "100%", height:160}} 
       />
       <Text style={globalStyles.header}>ES410: Insight, Interface, Intelligence Warwick – Group 5</Text>
       <Text>Low-Cost Smart Agricultural Sensing System for Small Holder Farms in South Asia</Text>
@@ -91,6 +86,9 @@ export default function About({ navigation }) {
       <Text style={globalStyles.bullet}>
         This project was completed as part of the ES410 course at Warwick University. The research and development was conducted by Group 5, consisting of the individuals listed above. The project was supervised by Professor Jose Ortiz Gonzalez, who provided guidance and support throughout the project.
       </Text>
+      <Text style={globalStyles.links} onPress={gotoGithub}>
+      Visit Our GitHub Repo
+      </Text>
       <Text 
         style={globalStyles.links}
         onPress={() => Linking.openURL('https://www.notion.so/invite/ad64deccb463d3e21adbe6e0b9dc0670409e2db7')}
@@ -98,7 +96,8 @@ export default function About({ navigation }) {
         Link to Notion which was used to track progress throughout the project.
       </Text>
 
-      <Button title='back to home screen' onPress={pressHandler} />
+      <Button title='back to home screen' color='#c9efc7' onPress={pressHandler} />
+      <Text>{"\n\n\n"}</Text>
       </SafeAreaView>
     </ScrollView>
   );
