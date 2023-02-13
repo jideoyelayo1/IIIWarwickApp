@@ -9,6 +9,9 @@ export default function FarmingUpdates({ navigation }) {
   const pressHandler = () => {
     navigation.goBack();
   }
+  const createAPost = () => {
+    navigation.push('newPost');
+  }
   
   const [weather, setWeather] = useState({});
 
@@ -27,6 +30,7 @@ export default function FarmingUpdates({ navigation }) {
     <View style={globalStyles.container}>
       <Text>Farming Updates </Text>
       <Text>The temperature is {weather.main && weather.main.temp}</Text>
+      <Button title='Create a Post' onPress={createAPost} />
       <Button title='back to home screen' onPress={pressHandler} />
     </View>
   );

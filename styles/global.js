@@ -65,4 +65,9 @@ checkbox: {
 text: {
   marginLeft: 10,
 },
+Forum_text: { 
+  height: 120, 
+  borderColor: 'blue', 
+  borderWidth: 1, 
+},
 });

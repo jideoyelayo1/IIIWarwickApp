@@ -19,7 +19,6 @@ export default function SignUp({ navigation }) {
   const [pwd, setPwd] = useState("");
   const [Cnfpwd, setCnfPwd] = useState("");
   const [checked, setChecked] = useState(false);
-  const [accounts, setAccounts] = useState([]);
 
  
 

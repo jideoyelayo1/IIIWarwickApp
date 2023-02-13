@@ -4,13 +4,13 @@ import { globalStyles } from '../styles/global';
 
 
 
-export default function Contacts({ navigation }) {
+export default function newPost({ navigation }) {
 
   const pressHandler = () => {
     navigation.goBack();
   }
 
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [topic, setTopic] = useState("");
   const [msg, setMsg] = useState("");
 
@@ -18,8 +18,8 @@ export default function Contacts({ navigation }) {
 
 
   const Post = () => {
-    if(email===""){
-      alert("Invalid email");return;
+    if(user===""){
+      alert("Invalid username");return;
     }
     if(topic===""){
         alert("Invalid topic");return;
@@ -29,7 +29,7 @@ export default function Contacts({ navigation }) {
     }
 
     const account ={
-        "email":email,
+        "username":user,
         "topic":topic,
         "message":msg,
       }
@@ -37,8 +37,7 @@ export default function Contacts({ navigation }) {
       postData(account)
 
 
-    setEmail("");setTopic("");setMsg("");
-    alert("Message sent")
+    setUser("");setTopic("");setMsg("");
   }
 
   const postData = async (account) => {
@@ -78,11 +77,11 @@ export default function Contacts({ navigation }) {
         numberOfLines={4}
         multiline={true}
       />
-      <Text>Email:</Text><TextInput style={globalStyles.Calc_buttons}
-      autoComplete="email"
-      placeholder="Email "
-        onChangeText={(value) => setEmail(value)}
-        value={email}
+      <Text>Username:</Text><TextInput style={globalStyles.Calc_buttons}
+      autoComplete="username"
+      placeholder="Enter username"
+        onChangeText={(value) => setUser(value)}
+        value={user}
       />
 
       <Button title='Post' onPress={Post}/>

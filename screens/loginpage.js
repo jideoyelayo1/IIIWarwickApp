@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
-import { StyleSheet, View, Text, Button,TextInput } from 'react-native';
+import React,{useState,useEffect} from 'react';
+import { StyleSheet, View, Text, Button,TextInput,SafeAreaView,ScrollView } from 'react-native';
 import { globalStyles } from '../styles/global';
+import axios from 'axios';
 
 
 export default function LoginPage({ navigation }) {
@@ -11,12 +12,13 @@ export default function LoginPage({ navigation }) {
 
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
-  const [accounts, setAccounts] = useState("");
+
+
+
 
   const toLoginMenu = () => {
-    getAccounts(alert)
-    alert(accounts)
-
+    retrieveData();
+    
     if(user !== "Jim" && pwd !== "Pass"){
       alert("Invalid Username or Password");
       setUser("");setPwd("");
@@ -27,22 +29,31 @@ export default function LoginPage({ navigation }) {
   
   }
 
+  const retrieveData = async () => {
+    try {
+      const response = await fetch('https://webhook.site/cb184155-4b78-4189-88aa-082822ad1c51', {
+        method: 'get',
+        mode: 'no-cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        
+      });
+      alert("Sucess! 0.5")
+      const data = await response.json();
+      alert("Sucess!");
+      return data;
+    } catch (e) {
+      alert(e);
+    }
+  };
+
   
-
-  const getAccounts = () =>{
-      return fetch('https://webhook.site/cb184155-4b78-4189-88aa-082822ad1c51')
-    .then(  (response) => response.json())
-    .then( (responseJson) => {
-      setAccounts(responseJson.accounts)
-    })
-    .catch((error) => alert(error))
-    
-
-  }
 
 
   return (
-    <View style={globalStyles.container}>
+    <ScrollView style={globalStyles.container}>
 
       <Text>LoginPage Screen</Text>
       <Text>Username</Text><TextInput style={globalStyles.Calc_buttons}
@@ -61,6 +72,6 @@ export default function LoginPage({ navigation }) {
       <Button title='Sign Up' onPress={toSignUp} />
 
       <Button title='back to home screen' onPress={pressHandler} />
-    </View>
+    </ScrollView>
   );
 }

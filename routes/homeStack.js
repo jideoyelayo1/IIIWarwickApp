@@ -21,6 +21,7 @@ import K_vals from '../screens/Graphs/K_vals';
 import Temperature from '../screens/Graphs/temp';
 import Humidity from '../screens/Graphs/humd';
 import TermsOfService from '../screens/TermsOfService';
+import newPost from '../screens/newPost';
 
 
 const screens = {
@@ -81,6 +82,9 @@ const screens = {
   },
   TermsOfService: {
     screen: TermsOfService,
+  },
+  newPost: {
+    screen: newPost,
   },
 
 };
