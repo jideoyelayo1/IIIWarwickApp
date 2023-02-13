@@ -11,8 +11,12 @@ export default function LoginPage({ navigation }) {
 
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
+  const [accounts, setAccounts] = useState("");
 
   const toLoginMenu = () => {
+    getAccounts(alert)
+    alert(accounts)
+
     if(user !== "Jim" && pwd !== "Pass"){
       alert("Invalid Username or Password");
       setUser("");setPwd("");
@@ -21,6 +25,19 @@ export default function LoginPage({ navigation }) {
     setUser("");setPwd("");
     navigation.push('LoginMenu');  
   
+  }
+
+  
+
+  const getAccounts = () =>{
+      return fetch('https://webhook.site/cb184155-4b78-4189-88aa-082822ad1c51')
+    .then(  (response) => response.json())
+    .then( (responseJson) => {
+      setAccounts(responseJson.accounts)
+    })
+    .catch((error) => alert(error))
+    
+
   }
 
 

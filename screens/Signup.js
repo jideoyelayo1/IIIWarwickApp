@@ -45,22 +45,44 @@ export default function SignUp({ navigation }) {
       alert("You have not agreed to terms of service");return;
     }      
     
-    //setUser("");setCnfPwd("");setPwd("");setEmail("");setChecked(false);
+    //
     //alert("This has not been implemented yet");
     const account ={
       "name":user,
-      "password":password,
+      "password":pwd,
+      "email":email,
       "iD":Math.floor(Math.random() * (1000000 - 0 + 1)) + 0,
       "DeviceIDs":[]
     }
 
-    //saveData(account)
-    
-    
+    postData(account) 
+    setUser("");setCnfPwd("");setPwd("");setEmail("");setChecked(false); 
     
   
   
   }
+
+  const postData = async (account) => {
+    try {
+      await fetch('https://webhook.site/cb184155-4b78-4189-88aa-082822ad1c51', {
+        method: 'post',
+        mode: 'no-cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          account
+        }),
+      });
+    } catch (e) {
+      alert(e);
+    }
+    alert("uploaded")
+  };
+  
+
+  
   
 
   return (
