@@ -124,5 +124,22 @@ Farming_Alerts_box: {
   fontWeight: 'bold',
   color: '#c9efc7',
 },
+Forum_comment_text: {
+  height: 60,  
+  borderWidth: 3, 
+  borderColor: '#c9efc7',
+  backgroundColor: 'white',
+},
+Forum_message_text: {  
+  borderWidth: 3, 
+  borderColor: 'black',
+  backgroundColor: '#c9efc7',
+},
+Forum_sent_comment: {  
+  borderWidth: 3, 
+  borderColor: 'black',
+  backgroundColor: '#c9efc7',
+},
+
 
 });

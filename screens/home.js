@@ -28,6 +28,7 @@ export default function Home({ navigation }) {
       <Button title='Fertiliser Usage Calculator' onPress={toCalc} color='#c9efc7' style={globalStyles.HomePage_buttons}/>
       <Button title='Product List' onPress={toProductList} color='#c9efc7' style={globalStyles.HomePage_buttons}/>
       <Button title='Contacts' onPress={toContacts} color='#c9efc7' style={globalStyles.HomePage_buttons}/>
+      
       <Text> *Still Under development*</Text>
 
       </View>

@@ -86,6 +86,9 @@ const screens = {
   newPost: {
     screen: newPost,
   },
+  ReviewDetails: {
+    screen: ReviewDetails,
+  },
 
 };
 
