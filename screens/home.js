@@ -6,7 +6,7 @@ import { globalStyles } from '../styles/global';
 
 export default function Home({ navigation }) {
 
-  const toReviewDetails = () => {    navigation.push('ReviewDetails');  }
+  const toReviewDetails = () => {    navigation.push('MyOrders');  }
   const toFarmingUpdates = () => {    navigation.push('FarmingUpdates');  }
   const toLoginPage = () => {    navigation.push('LoginPage');  }
   const toAbout = () => {    navigation.push('About');  }

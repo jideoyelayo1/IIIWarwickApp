@@ -47,9 +47,6 @@ export default function FarmingUpdates({ navigation }) {
   const pressHandler = () => {
     navigation.goBack();
   }
-  const createAPost = () => {
-    navigation.push('newPost');
-  }
   
   const [weather, setWeather] = useState({});
 
