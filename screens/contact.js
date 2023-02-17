@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Button,TextInput,AsyncStorage } from 'react-nat
 import { globalStyles } from '../styles/global';
 
 
-
 export default function Contacts({ navigation }) {
 
   const pressHandler = () => {
@@ -57,7 +56,6 @@ export default function Contacts({ navigation }) {
     } catch (e) {
       alert(e);
     }
-    alert("uploaded")
   };
 
   
@@ -85,8 +83,8 @@ export default function Contacts({ navigation }) {
         value={email}
       />
 
-      <Button title='Post' onPress={Post}/>
-      <Button title='back' onPress={pressHandler} />
+      <Button title='Post' color='#c9efc7' onPress={Post}/>
+      <Button title='back' color='#c9efc7' onPress={pressHandler} />
     </View>
   );
 }

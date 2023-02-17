@@ -69,10 +69,7 @@ export default function FarmingUpdates({ navigation }) {
     var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     return formattedTime;
   }
-
-
   
-
   return (
     <SafeAreaView style={globalStyles.container}>
       <Text style={globalStyles.titleText}>Farming Updates{"\n"} </Text>
