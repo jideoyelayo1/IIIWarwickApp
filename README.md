@@ -1,6 +1,13 @@
 <h1>React Native App for Indian Farmers</h1>
 This is a mobile application designed to help Indian farmers with their farming activities. The app is designed to be cross-platform and has been developed for both Android and iOS operating systems. The application is integrated with the sensors and machine learning model developed by the team to provide the best possible advice and support to farmers.
 
+<h2> Demostration </h2>
+<div style="text-align:center;">
+<a href="https://www.youtube.com/watch?v=9VQ6xKP9p1k">
+    <img src="https://img.youtube.com/vi/9VQ6xKP9p1k/0.jpg" alt="Demostration of Mobile App">
+  </a>
+  </div>
+  
 <h2>Features</h2> 
 
 * Crop Health Monitoring: The app allows farmers to monitor the health of their crops in real-time. Farmers who have purchased sensors can view live graphs of their crops from any location in the world.
